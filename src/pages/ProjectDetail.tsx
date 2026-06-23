@@ -86,7 +86,7 @@ export function ProjectDetail() {
         >
           <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">Build Log & Engineering Process</h2>
           <div className="bg-white/5 border border-white/5 rounded-2xl p-8 md:p-12">
-            <p className="m-0 text-gray-300">{project.details_text}</p>
+            <p className="m-0 text-gray-300 whitespace-pre-wrap">{project.details_text}</p>
           </div>
         </motion.div>
 
