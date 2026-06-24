@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Code2, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 import { projects } from '../data/projects';
 
 export function ProjectDetail() {
@@ -12,7 +13,7 @@ export function ProjectDetail() {
       <div className="min-h-screen pt-32 pb-20 flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold mb-4 text-gradient">Project Not Found</h1>
         <Link to="/portfolio" className="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
-          <ArrowLeft size={16} /> Back to Works
+          <ArrowLeft size={16} /> Back to Projects
         </Link>
       </div>
     );
@@ -24,7 +25,7 @@ export function ProjectDetail() {
         
         {/* Navigation */}
         <Link to="/portfolio" className="inline-flex items-center gap-2 text-gray-500 hover:text-white mb-12 transition-colors font-mono uppercase tracking-widest text-xs">
-          <ArrowLeft size={16} /> Back to Works
+          <ArrowLeft size={16} /> Back to Projects
         </Link>
 
         {/* Header */}
@@ -85,8 +86,8 @@ export function ProjectDetail() {
           className="prose prose-invert max-w-none mb-24 font-sans text-lg text-gray-400 leading-relaxed"
         >
           <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">Build Log & Engineering Process</h2>
-          <div className="bg-white/5 border border-white/5 rounded-2xl p-8 md:p-12">
-            <p className="m-0 text-gray-300 whitespace-pre-wrap">{project.details_text}</p>
+          <div className="bg-white/5 border border-white/5 rounded-2xl p-8 md:p-12 prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-300 prose-a:text-electric-cyan prose-strong:text-white prose-ul:text-gray-300">
+            <ReactMarkdown>{project.details_text}</ReactMarkdown>
           </div>
         </motion.div>
 

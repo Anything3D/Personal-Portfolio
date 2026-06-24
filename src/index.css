@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@500;700&family=Caveat&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-primary-black: #000000;
