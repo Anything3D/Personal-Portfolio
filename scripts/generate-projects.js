@@ -29,12 +29,18 @@ function generateProjects() {
         const fileContent = fs.readFileSync(mdPath, 'utf-8');
         const { data, content } = matter(fileContent);
 
+        const resolveImagePath = (imgPath) => {
+          if (!imgPath) return '';
+          if (imgPath.startsWith('http') || imgPath.startsWith('/')) return imgPath;
+          return `/content/projects/${folder}/${imgPath}`;
+        };
+
         projects.push({
           id: data.id || folder, // Default ID to folder name if not specified
           title: data.title || 'Untitled Project',
           description: data.description || '',
-          thumbnail_image: data.thumbnail_image || '',
-          gallery_images: data.gallery_images || [],
+          thumbnail_image: resolveImagePath(data.thumbnail_image),
+          gallery_images: (data.gallery_images || []).map(resolveImagePath),
           tags: data.tags || [],
           github_link: data.github_link || '',
           details_text: content.trim(),
