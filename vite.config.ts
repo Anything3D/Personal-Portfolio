@@ -6,7 +6,7 @@ import { execSync } from 'child_process'
 function generateProjectsPlugin() {
   return {
     name: 'generate-projects',
-    handleHotUpdate({ file }) {
+    handleHotUpdate({ file }: { file: string }) {
       if (file.endsWith('.md')) {
         console.log('Markdown file changed, regenerating projects...');
         execSync('node scripts/generate-projects.js');
