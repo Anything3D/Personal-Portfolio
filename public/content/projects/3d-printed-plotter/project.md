@@ -25,6 +25,8 @@ To keep costs incredibly low, I designed this around the ubiquitous (and cheap) 
 - **The Muscle**: A neat row of four ULN2003 stepper driver boards mounted directly to the side of the chassis.
 - **The Actuators**: Four 28BYJ-48 motors (Two for the Y-axis gantry, one for the X-axis carriage, and one for the Z-axis pen lift).
 
+[Wiring Diagram](Wiring.jpg)
+
 ### The Motion System: Rack and Pinion
 Since I refused to use GT2 timing belts, I had to get creative. I integrated gear racks directly into the 3D printed base and the X-axis gantry.
 
