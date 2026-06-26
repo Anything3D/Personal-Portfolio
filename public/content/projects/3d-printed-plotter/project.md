@@ -2,10 +2,10 @@
 id: "3d-printed-plotter"
 title: "100% 3D Printed Rack & Pinion Plotter"
 description: "My very first plotter design—a fully 3D printed, dual-Y rack and pinion machine built using 28BYJ-48 stepper motors with almost zero non-printed hardware."
-thumbnail_image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"
+thumbnail_image: "Assembly_1.png"
 gallery_images:
-  - "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200"
-  - "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&q=80&w=1200"
+  - "Assembly_1.png"
+  - ""
 tags: ["3D Printing", "Hardware", "Kinematics", "Python"]
 github_link: "https://github.com"
 ---
