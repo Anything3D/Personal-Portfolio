@@ -35,6 +35,15 @@ function generateProjects() {
           return `/content/projects/${folder}/${imgPath}`;
         };
 
+        // Replace relative image links inside the Markdown body
+        // Matches ![alt](path)
+        const processedContent = content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, imgPath) => {
+          if (imgPath.startsWith('http') || imgPath.startsWith('/')) {
+            return match;
+          }
+          return `![${alt}](/content/projects/${folder}/${imgPath})`;
+        });
+
         projects.push({
           id: data.id || folder, // Default ID to folder name if not specified
           title: data.title || 'Untitled Project',
@@ -43,7 +52,7 @@ function generateProjects() {
           gallery_images: (data.gallery_images || []).map(resolveImagePath),
           tags: data.tags || [],
           github_link: data.github_link || '',
-          details_text: content.trim(),
+          details_text: processedContent.trim(),
         });
       }
     }
